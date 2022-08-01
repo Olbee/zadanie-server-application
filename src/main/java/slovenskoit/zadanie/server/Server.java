@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 import slovenskoit.zadanie.service.customer.CustomerService;
 import slovenskoit.zadanie.service.customer.CustomerServiceJPA;
 import slovenskoit.zadanie.service.device.DeviceService;
@@ -16,9 +15,9 @@ import slovenskoit.zadanie.service.diskSpace.DiskSpaceServiceJPA;
 @SpringBootApplication
 @Configuration
 @EntityScan(basePackages = "slovenskoit.zadanie.entity")
-public class serverConfiguration {
+public class Server {
     public static void main(String[] args) {
-        SpringApplication.run(serverConfiguration.class, args);
+        SpringApplication.run(Server.class, args);
     }
 
     @Bean

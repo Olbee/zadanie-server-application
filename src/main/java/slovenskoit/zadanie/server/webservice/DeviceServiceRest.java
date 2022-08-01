@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import slovenskoit.zadanie.entity.Device;
+import slovenskoit.zadanie.entity.DiskSpace;
 import slovenskoit.zadanie.service.device.DeviceService;
 
 import javax.validation.Valid;
@@ -14,17 +15,6 @@ public class DeviceServiceRest {
 
     @Autowired
     DeviceService deviceService;
-
-    @PostMapping("/add")
-    public void addDevice(@RequestBody Device device) {
-        device.getDiskSpace().addDevice(device);
-        deviceService.addDevice(device);
-    }
-
-    @PostMapping("/delete")
-    public void deleteDevice(@RequestBody Device device) {
-        deviceService.deleteDevice(device);
-    }
 
     @PostMapping("/startStream")
     public void startDataStream(@RequestBody Device device) {
